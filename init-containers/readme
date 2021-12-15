@@ -1,0 +1,9 @@
+1. apply pod
+kubectl apply -f pod.yaml
+
+2. 登录init container查看运行情况，或者查看container输出日志
+kubectl exec -it myapp-pod -c init-myservice -- sh
+kubectl logs myapp-pod -c init-myservice
+
+3. apply services，保证init container可以顺利执行
+kubectl apply -f services.yaml

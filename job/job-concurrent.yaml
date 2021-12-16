@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: pi-concurrent
+spec:
+  completions: 6
+  parallelism: 2
+  template:
+    spec:
+      containers:
+      - name: pi-concurrent
+        image: busybox
+        command: ["echo",  "hello k8s job!"]
+      restartPolicy: Never
+  backoffLimit: 4
+
+

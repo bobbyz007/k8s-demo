@@ -1,0 +1,9 @@
+
+推荐使用deployment，尽量不要单独使用rs
+
+如果先apply pod，在apply rs，则rs会管理不同类型的pod，类似如下：
+
+NAME             READY   STATUS    RESTARTS   AGE
+frontend-hmmj2   1/1     Running   0          9s
+pod1             1/1     Running   0          36s
+pod2             1/1     Running   0          36s
